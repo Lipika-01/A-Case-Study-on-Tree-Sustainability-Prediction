@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tree Sustainability Input</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+  <div class="form-container">
+    <h1>🌱 Tree Sustainability Predictor</h1>
+    <form action="#" method="post">
+      {% if prediction %}
+  <h2 style="text-align: center; color: green;">{{ prediction }}</h2>
+{% endif %}
+
+
+      <!-- Column 1 -->
+      <div class="form-grid">
+        <div class="form-group">
+          <label>Tree Height (m)</label>
+          <input type="number" step="0.01" name="tree_height" min="0" required>
+        </div>
+
+        <div class="form-group">
+          <label>Tree Diameter (cm)</label>
+          <input type="number" step="0.01" name="tree_diameter" min="0" required>
+        </div>
+
+        <div class="form-group">
+          <label>Age (years)</label>
+          <input type="number" name="age" min="0" required>
+        </div>
+
+        <div class="form-group">
+          <label>Soil pH</label>
+          <input type="number" step="0.01" name="soil_ph" min="0" max="14" required>
+        </div>
+
+        <div class="form-group">
+          <label>Soil Type</label>
+          <select name="soil_type" required>
+            <option value="clay">Clay</option>
+            <option value="silt">Silt</option>
+            <option value="sand">Sand</option>
+            <option value="loam">Loam</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Rainfall (mm/year)</label>
+          <input type="number" step="0.01" name="rainfall" min="0" required>
+        </div>
+      </div>
+
+      <!-- Column 2 -->
+      <div class="form-grid">
+        <div class="form-group">
+          <label>Temperature (°C)</label>
+          <input type="number" step="0.01" name="temperature" required>
+        </div>
+
+        <div class="form-group">
+          <label>Sun Hours (per day)</label>
+          <input type="number" step="0.01" name="sun_hours" min="0" required>
+        </div>
+
+        <div class="form-group">
+          <label>Slope (°)</label>
+          <input type="number" step="0.01" name="slope" min="0" required>
+        </div>
+
+        <div class="form-group">
+          <label>Elevation (m)</label>
+          <input type="number" step="0.01" name="elevation" min="0" required>
+        </div>
+
+        <div class="form-group">
+          <label>Land Use</label>
+          <select name="land_use" required>
+            <option value="agriculture">Agriculture</option>
+            <option value="urban">Urban</option>
+            <option value="forest">Forest</option>
+            <option value="mixed">Mixed</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Proximity to Water (km)</label>
+          <input type="number" step="0.01" name="proximity_water" min="0" required>
+        </div>
+
+        <div class="form-group">
+          <label>Competition Index (0 to 1)</label>
+          <input type="number" step="0.01" min="0" max="1" name="competition_index" required>
+        </div>
+
+        <div class="form-group">
+          <label>Disease Index (0 to 1)</label>
+          <input type="number" step="0.01" min="0" max="1" name="disease_index" required>
+        </div>
+
+        <div class="form-group">
+          <label>Pollution Level (0 to 1)</label>
+          <input type="number" step="0.01" min="0" max="1" name="pollution_level" required>
+        </div>
+      </div>
+
+      <div class="submit-btn">
+        <button type="submit">Predict Sustainability</button>
+      </div>
+
+    </form>
+  </div>
+</body>
+</html>
